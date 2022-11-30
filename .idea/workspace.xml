@@ -4,28 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c557f5ab-156c-4538-adfd-a0ac6d057bb0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list default="true" id="c557f5ab-156c-4538-adfd-a0ac6d057bb0" name="Changes" comment="Add API endpoint to get expected number of attempts">
       <change afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/EventCalculatorApplication.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/controller/EventCalculatorController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/dto/EventCalculatorRequest.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/json/EventDeserializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/AddRangeEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/ConditionEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/DependentGroupEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/EmptyEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/Event.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/EventEntry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/GroupEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/IncrementEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/Item.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/ItemModel.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/service/EventCalculatorService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/ConditionEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/ConditionEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/DependentGroupEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/DependentGroupEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/ItemModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/ItemModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +55,26 @@
       <recent name="com.eventcalculator.model" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="EventCalculatorApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.eventcalculator.EventCalculatorApplication" />
+      <module name="eventCalculator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.eventcalculator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.EventCalculatorApplication" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -74,6 +84,14 @@
       <option name="presentableId" value="Default" />
       <updated>1669802334921</updated>
     </task>
+    <task id="LOCAL-00001" summary="Initial commit">
+      <created>1669818232560</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1669818232560</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -86,5 +104,26 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit" />
+    <MESSAGE value="Add API endpoint to get expected number of attempts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add API endpoint to get expected number of attempts" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/eventcalculator/model/ConditionEvent.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="newModels.get(1).items" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
