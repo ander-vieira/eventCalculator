@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c557f5ab-156c-4538-adfd-a0ac6d057bb0" name="Changes" comment="Add API endpoint to get expected number of attempts">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="c557f5ab-156c-4538-adfd-a0ac6d057bb0" name="Changes" comment="Add REST endpoint to calculate probability distribution of attempts">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/utils/DistributionUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventcalculator/controller/EventCalculatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/controller/EventCalculatorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/ItemModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/ItemModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventcalculator/service/EventCalculatorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/service/EventCalculatorService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +93,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669825201533</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add README">
+      <created>1669826091883</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1669826091883</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -106,7 +117,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Add API endpoint to get expected number of attempts" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add API endpoint to get expected number of attempts" />
+    <MESSAGE value="Add README" />
+    <MESSAGE value="Add REST endpoint to calculate probability distribution of attempts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add REST endpoint to calculate probability distribution of attempts" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -116,11 +129,23 @@
           <line>19</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/eventcalculator/service/EventCalculatorService.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="com.eventcalculator.model.ItemModel" memberName="attempt" />
+      </pinned-members>
+    </pin-to-top-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="newModels.get(1).items" />
+        <watch expression="newModels.get(0)" />
+        <watch expression="newModels.get(1)" />
       </configuration>
     </watches-manager>
   </component>

@@ -11,9 +11,14 @@ public class ItemModel {
     private final List<Item> items;
     private final double chance;
     private final boolean modified;
+    private final int attempt;
+
+    public static ItemModel fromItems(List<Item> items) {
+        return new ItemModel(items.stream().map(Item::new).toList(), 1, false, 0);
+    }
 
     public ItemModel copy() {
-        return new ItemModel(this.getItems().stream().map(Item::new).toList(), this.getChance(), this.isModified());
+        return new ItemModel(this.items.stream().map(Item::new).toList(), this.chance, this.modified, this.attempt);
     }
 
     public ItemModel addToItem(int itemId, int amount) {
@@ -25,15 +30,15 @@ public class ItemModel {
             item.add(amount);
         }
 
-        return new ItemModel(this.items, this.chance, this.modified || modified);
+        return new ItemModel(this.items, this.chance, this.modified || modified, this.attempt);
     }
 
     public ItemModel applyChance(double chance) {
-        return new ItemModel(this.items, this.chance*chance, this.modified);
+        return new ItemModel(this.items, this.chance*chance, this.modified, this.attempt);
     }
 
-    public ItemModel getClean() {
-        return new ItemModel(this.getItems(), 1, false);
+    public ItemModel getChild() {
+        return new ItemModel(this.getItems(), 1, false, this.attempt + 1);
     }
 
     public boolean isComplete() {
