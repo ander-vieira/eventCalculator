@@ -1,9 +1,10 @@
 package com.eventcalculator.controller;
 
 import com.eventcalculator.dto.EventCalculatorRequest;
+import com.eventcalculator.model.ItemModel;
+import com.eventcalculator.model.ResultStats;
 import com.eventcalculator.service.EventCalculatorService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,13 +14,8 @@ public class EventCalculatorController {
     @Autowired
     EventCalculatorService eventCalculatorService;
 
-    @PostMapping("expectedAttempts")
-    public double getExpectedAttempts(@RequestBody EventCalculatorRequest request) {
-        return eventCalculatorService.getExpectedAttempts(request.getItems(), request.getEvent());
-    }
-
-    @PostMapping("attemptDistribution/{numAttempts}")
-    public double[] getAttemptDistribution(@RequestBody EventCalculatorRequest request, @PathVariable int numAttempts) {
-        return eventCalculatorService.getAttemptDistribution(request.getItems(), request.getEvent(), numAttempts);
+    @PostMapping("/processModel")
+    public ResultStats processModel(@RequestBody EventCalculatorRequest request) {
+        return eventCalculatorService.getResultStats(ItemModel.fromItems(request.getItems()), request.getEvent(), request.getMaxAttempts());
     }
 }

@@ -12,4 +12,5 @@ import java.util.List;
 public class EventCalculatorRequest {
     private final List<Item> items;
     private final Event event;
+    private final int maxAttempts;
 }

@@ -1,9 +1,9 @@
 package com.eventcalculator.service;
 
 import com.eventcalculator.model.Event;
-import com.eventcalculator.model.Item;
 import com.eventcalculator.model.ItemModel;
-import com.eventcalculator.utils.DistributionUtils;
+import com.eventcalculator.model.ResultStats;
+import com.eventcalculator.utils.StatsUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,62 +12,37 @@ import java.util.List;
 @Service
 public class EventCalculatorService {
     @Autowired
-    private DistributionUtils distributionUtils;
+    private StatsUtils distributionUtils;
 
-    public double getExpectedAttempts(List<Item> items, Event event) {
-        ItemModel itemModel = ItemModel.fromItems(items);
-
-        return this.getExpectedAttempts(itemModel, event);
-    }
-
-    private double getExpectedAttempts(ItemModel itemModel, Event event) {
+    public ResultStats getResultStats(ItemModel itemModel, Event event, int maxAttempts) {
         if(itemModel.isComplete()) {
-            return 0;
+            double[] distribution = new double[maxAttempts];
+            double remainder = 0;
+
+            if(itemModel.getAttempt() < maxAttempts) {
+                distribution[itemModel.getAttempt()] = 1;
+            } else {
+                remainder = 1;
+            }
+
+            return new ResultStats(distribution, remainder, 0);
         } else {
             List<ItemModel> newModels = event.happen(itemModel);
-            double result = 1;
-
             List<ItemModel> modifiedModels = newModels.stream().filter(ItemModel::isModified).toList();
-
-            double totalChance = 0;
-            for(ItemModel model : modifiedModels) {
-                result += model.getChance()*this.getExpectedAttempts(model.getChild(), event);
-                totalChance += model.getChance();
-            }
+            double totalChance = modifiedModels.stream().map(ItemModel::getChance).reduce(0.0, Double::sum);
 
             if(totalChance != 0) {
-                result /= totalChance;
+                ResultStats result = new ResultStats(new double[maxAttempts], 0, 1/totalChance);
 
-                return result;
+                for(ItemModel model : modifiedModels) {
+                    ResultStats modelResult = this.getResultStats(model.getChild(), event, maxAttempts);
+                    result = distributionUtils.addResults(result, modelResult, model.getChance()/totalChance);
+                }
+
+                return distributionUtils.geometricExpansion(result, totalChance);
             } else {
-                return Double.POSITIVE_INFINITY;
+                return new ResultStats(new double[maxAttempts], 1, Double.POSITIVE_INFINITY);
             }
         }
-    }
-
-    public double[] getAttemptDistribution(List<Item> items, Event event, int numAttempts) {
-        return getAttemptDistribution(ItemModel.fromItems(items), event, numAttempts, 1);
-    }
-
-    private double[] getAttemptDistribution(ItemModel itemModel, Event event, int numAttempts, double currentChance) {
-        double[] result = new double[numAttempts];
-
-        if(itemModel.isComplete()) {
-            result[itemModel.getAttempt()] = currentChance*itemModel.getChance();
-        } else {
-            List<ItemModel> newModels = event.happen(itemModel);
-            List<ItemModel> modifiedModels = newModels.stream().filter(ItemModel::isModified).toList();
-
-            double totalChance = 0;
-            for(ItemModel model : modifiedModels) {
-                double[] modelResult = getAttemptDistribution(model.getChild(), event, numAttempts, currentChance*model.getChance());
-                distributionUtils.addArray(result, modelResult);
-                totalChance += model.getChance();
-            }
-
-            result = distributionUtils.geometricExpansion(result, 1-totalChance);
-        }
-
-        return result;
     }
 }
