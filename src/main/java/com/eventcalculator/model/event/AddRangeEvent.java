@@ -1,5 +1,6 @@
-package com.eventcalculator.model;
+package com.eventcalculator.model.event;
 
+import com.eventcalculator.model.ItemModel;
 import lombok.AllArgsConstructor;
 
 import java.util.ArrayList;

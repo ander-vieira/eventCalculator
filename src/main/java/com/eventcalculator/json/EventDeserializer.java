@@ -1,6 +1,7 @@
 package com.eventcalculator.json;
 
 import com.eventcalculator.model.*;
+import com.eventcalculator.model.event.*;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
@@ -30,7 +31,7 @@ public class EventDeserializer extends JsonDeserializer<Event> {
                     node.get("maxAmount").asInt());
             case ConditionEvent.JSON_TYPE -> new ConditionEvent(objectMapper.treeToValue(node.get("event"), Event.class),
                     node.get("chance").asDouble());
-            case GroupEvent.JSON_TYPE -> new GroupEvent(objectMapper.treeToValue(node.get("entries"), EventEntry[].class));
+            case GroupEvent.JSON_TYPE -> new GroupEvent(objectMapper.treeToValue(node.get("events"), Event[].class));
             case OptionEvent.JSON_TYPE ->
                     new OptionEvent(objectMapper.treeToValue(node.get("entries"), EventEntry[].class));
             default -> null;

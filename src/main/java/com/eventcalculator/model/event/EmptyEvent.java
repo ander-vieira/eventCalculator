@@ -1,4 +1,6 @@
-package com.eventcalculator.model;
+package com.eventcalculator.model.event;
+
+import com.eventcalculator.model.ItemModel;
 
 import java.util.List;
 

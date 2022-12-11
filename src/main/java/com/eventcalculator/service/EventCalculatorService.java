@@ -1,6 +1,6 @@
 package com.eventcalculator.service;
 
-import com.eventcalculator.model.Event;
+import com.eventcalculator.model.event.Event;
 import com.eventcalculator.model.ItemModel;
 import com.eventcalculator.model.ResultData;
 import com.eventcalculator.utils.ResultUtils;

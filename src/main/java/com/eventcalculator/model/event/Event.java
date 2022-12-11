@@ -1,6 +1,7 @@
-package com.eventcalculator.model;
+package com.eventcalculator.model.event;
 
 import com.eventcalculator.json.EventDeserializer;
+import com.eventcalculator.model.ItemModel;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import java.util.List;

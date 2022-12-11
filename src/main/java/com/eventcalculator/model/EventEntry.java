@@ -1,5 +1,6 @@
 package com.eventcalculator.model;
 
+import com.eventcalculator.model.event.Event;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

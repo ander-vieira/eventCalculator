@@ -1,6 +1,6 @@
 package com.eventcalculator.dto;
 
-import com.eventcalculator.model.Event;
+import com.eventcalculator.model.event.Event;
 import com.eventcalculator.model.Item;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
