@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c557f5ab-156c-4538-adfd-a0ac6d057bb0" name="Changes" comment="Add controller unit tests">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/eventcalculator/service/DistributionServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="c557f5ab-156c-4538-adfd-a0ac6d057bb0" name="Changes" comment="Add service unit tests" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -194,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670790201839</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Add service unit tests">
+      <created>1670792212505</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1670792212505</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -224,7 +228,8 @@
     <MESSAGE value="Simplify GroupEvent, refactor event package and add unit tests" />
     <MESSAGE value="Add comments" />
     <MESSAGE value="Add controller unit tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add controller unit tests" />
+    <MESSAGE value="Add service unit tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add service unit tests" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
