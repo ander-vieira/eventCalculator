@@ -9,6 +9,8 @@ import java.util.List;
 public class GroupEvent implements Event {
     private final EventEntry[] entries;
 
+    public static final String JSON_TYPE = "group";
+
     @Override
     public List<ItemModel> happen(ItemModel itemModel) {
         return getEntryResults(itemModel, 0);

@@ -4,16 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c557f5ab-156c-4538-adfd-a0ac6d057bb0" name="Changes" comment="Add results cache to improve performance">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/DistributionData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/utils/ResultUtils.java" afterDir="false" />
+    <list default="true" id="c557f5ab-156c-4538-adfd-a0ac6d057bb0" name="Changes" comment="Refactor code to match theory better">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventcalculator/controller/EventCalculatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/controller/EventCalculatorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventcalculator/json/EventDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/json/EventDeserializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/AddRangeEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/AddRangeEvent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/ConditionEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/ConditionEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/ItemModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/ItemModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/ResultStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/ResultData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventcalculator/service/EventCalculatorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/service/EventCalculatorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventcalculator/utils/StatsUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/utils/DistributionUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/DependentGroupEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/DependentGroupEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/EmptyEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/EmptyEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/GroupEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/GroupEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/IncrementEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/IncrementEvent.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670720383810</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Refactor code to match theory better">
+      <created>1670769441209</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1670769441209</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -145,20 +151,22 @@
     <MESSAGE value="Add REST endpoint to calculate probability distribution of attempts" />
     <MESSAGE value="Combine functions into a single endpoint" />
     <MESSAGE value="Add results cache to improve performance" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add results cache to improve performance" />
+    <MESSAGE value="Refactor code to match theory better" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor code to match theory better" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/eventcalculator/model/ConditionEvent.java</url>
-          <line>19</line>
+          <line>21</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
+        <PinnedItemInfo parentTag="com.eventcalculator.model.ItemModel" memberName="items" />
         <PinnedItemInfo parentTag="com.eventcalculator.model.ItemModel" memberName="attempt" />
       </pinned-members>
     </pin-to-top-manager>
@@ -167,6 +175,8 @@
         <watch expression="newModels.get(1).items" />
         <watch expression="newModels.get(0)" />
         <watch expression="newModels.get(1)" />
+        <watch expression="models.get(1)" />
+        <watch expression="itemModel" />
       </configuration>
     </watches-manager>
   </component>

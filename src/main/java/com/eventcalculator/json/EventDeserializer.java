@@ -23,15 +23,15 @@ public class EventDeserializer extends JsonDeserializer<Event> {
 
         String type = node.get("type").textValue();
         return switch (type) {
-            case "empty" -> new EmptyEvent();
-            case "increment" -> new IncrementEvent(node.get("itemId").asInt());
-            case "range" -> new AddRangeEvent(node.get("itemId").asInt(),
+            case EmptyEvent.JSON_TYPE -> new EmptyEvent();
+            case IncrementEvent.JSON_TYPE -> new IncrementEvent(node.get("itemId").asInt());
+            case AddRangeEvent.JSON_TYPE -> new AddRangeEvent(node.get("itemId").asInt(),
                     node.get("minAmount").asInt(),
                     node.get("maxAmount").asInt());
-            case "condition" -> new ConditionEvent(objectMapper.treeToValue(node.get("event"), Event.class),
+            case ConditionEvent.JSON_TYPE -> new ConditionEvent(objectMapper.treeToValue(node.get("event"), Event.class),
                     node.get("chance").asDouble());
-            case "group" -> new GroupEvent(objectMapper.treeToValue(node.get("entries"), EventEntry[].class));
-            case "dependentGroup" ->
+            case GroupEvent.JSON_TYPE -> new GroupEvent(objectMapper.treeToValue(node.get("entries"), EventEntry[].class));
+            case DependentGroupEvent.JSON_TYPE ->
                     new DependentGroupEvent(objectMapper.treeToValue(node.get("entries"), EventEntry[].class));
             default -> null;
         };

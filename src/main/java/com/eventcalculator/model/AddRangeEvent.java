@@ -11,6 +11,8 @@ public class AddRangeEvent implements Event {
     private final int minAmount;
     private final int maxAmount;
 
+    public static final String JSON_TYPE = "range";
+
     @Override
     public List<ItemModel> happen(ItemModel itemModel) {
         List<ItemModel> newModels = new ArrayList<>();

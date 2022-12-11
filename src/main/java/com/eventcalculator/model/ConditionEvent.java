@@ -10,6 +10,8 @@ public class ConditionEvent implements Event {
     private final Event event;
     private final double chance;
 
+    public static final String JSON_TYPE = "condition";
+
     @Override
     public List<ItemModel> happen(ItemModel itemModel) {
         final List<ItemModel> newModels = new ArrayList<>();

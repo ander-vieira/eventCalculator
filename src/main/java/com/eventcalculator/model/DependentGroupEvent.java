@@ -7,6 +7,8 @@ import java.util.List;
 public class DependentGroupEvent implements Event {
     private final EventEntry[] entries;
 
+    public static final String JSON_TYPE = "dependentGroup";
+
     public DependentGroupEvent(EventEntry[] entries) {
         double totalChance = Arrays.stream(entries).map(EventEntry::getChance).reduce(0.0, Double::sum);
 
