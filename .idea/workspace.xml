@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c557f5ab-156c-4538-adfd-a0ac6d057bb0" name="Changes" comment="Refactor deserializer to use constants">
+    <list default="true" id="c557f5ab-156c-4538-adfd-a0ac6d057bb0" name="Changes" comment="Remove unused item names">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/eventcalculator/model/EventTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventcalculator/json/EventDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/json/EventDeserializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/DependentGroupEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/OptionEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,8 +48,8 @@
       <recent name="com.eventcalculator.model" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="EventCalculatorApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.All in eventCalculator">
+    <configuration name="EventCalculatorApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.eventcalculator.EventCalculatorApplication" />
       <module name="eventCalculator" />
       <extension name="coverage">
@@ -61,11 +62,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.EventCalculatorApplication" />
-      </list>
-    </recent_temporary>
+    <configuration name="All in eventCalculator" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <module name="eventCalculator" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.EventCalculatorApplication" />
+      <item itemvalue="JUnit.All in eventCalculator" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -132,7 +142,21 @@
       <option name="project" value="LOCAL" />
       <updated>1670771084663</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Rename DependentGroupEvent to OptionEvent">
+      <created>1670771468958</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1670771468958</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Remove unused item names">
+      <created>1670775132744</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1670775132744</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -155,18 +179,11 @@
     <MESSAGE value="Add results cache to improve performance" />
     <MESSAGE value="Refactor code to match theory better" />
     <MESSAGE value="Refactor deserializer to use constants" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor deserializer to use constants" />
+    <MESSAGE value="Rename DependentGroupEvent to OptionEvent" />
+    <MESSAGE value="Remove unused item names" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove unused item names" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/eventcalculator/model/ConditionEvent.java</url>
-          <line>21</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="com.eventcalculator.model.ItemModel" memberName="items" />
@@ -182,5 +199,9 @@
         <watch expression="itemModel" />
       </configuration>
     </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/eventCalculator$All_in_eventCalculator__1_.ic" NAME="All in eventCalculator (1) Coverage Results" MODIFIED="1670772983418" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/eventCalculator$All_in_eventCalculator.ic" NAME="All in eventCalculator Coverage Results" MODIFIED="1670773498518" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
