@@ -2,8 +2,8 @@ package com.eventcalculator.service;
 
 import com.eventcalculator.model.Event;
 import com.eventcalculator.model.ItemModel;
-import com.eventcalculator.model.ResultStats;
-import com.eventcalculator.utils.StatsUtils;
+import com.eventcalculator.model.ResultData;
+import com.eventcalculator.utils.ResultUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,51 +14,46 @@ import java.util.Map;
 @Service
 public class EventCalculatorService {
     @Autowired
-    private StatsUtils distributionUtils;
+    private ResultUtils resultUtils;
 
-    public ResultStats getResultStats(ItemModel itemModel, Event event, int maxAttempts) {
-        Map<String, ResultStats> cachedResults = new HashMap<>();
+    public ResultData getResultStats(ItemModel itemModel, Event event, int maxAttempts) {
+        final Map<String, ResultData> cachedResults = new HashMap<>();
 
         return this.getResultStats(itemModel, event, maxAttempts, cachedResults);
     }
 
-    public ResultStats getResultStats(ItemModel itemModel, Event event, int maxAttempts, Map<String, ResultStats> cachedResults) {
+    private ResultData getResultStats(ItemModel itemModel, Event event, int maxAttempts, Map<String, ResultData> cachedResults) {
         if(itemModel.isComplete()) {
-            double[] distribution = new double[maxAttempts];
-            double remainder = 0;
-
-            if(itemModel.getAttempt() < maxAttempts) {
-                distribution[itemModel.getAttempt()] = 1;
-            } else {
-                remainder = 1;
-            }
-
-            return new ResultStats(distribution, remainder, 0);
+            return ResultData.finished(maxAttempts);
         } else {
-            List<ItemModel> newModels = event.happen(itemModel);
-            List<ItemModel> modifiedModels = newModels.stream().filter(ItemModel::isModified).toList();
-            double totalChance = modifiedModels.stream().map(ItemModel::getChance).reduce(0.0, Double::sum);
+            final List<ItemModel> models = event.happen(itemModel).stream().filter(ItemModel::isModified).toList();
 
-            if(totalChance != 0) {
-                ResultStats result = new ResultStats(new double[maxAttempts], 0, 1/totalChance);
+            ResultData partialResult = ResultData.empty(maxAttempts);
+            double totalChance = 0;
 
-                for(ItemModel model : modifiedModels) {
-                    String signature = model.getSignature();
-                    ResultStats modelResult;
-                    if(cachedResults.containsKey(signature)) {
-                        modelResult = cachedResults.get(signature);
-                    } else {
-                        modelResult = this.getResultStats(model.getChild(), event, maxAttempts, cachedResults);
-                        cachedResults.put(signature, modelResult);
-                    }
+            for(ItemModel model : models) {
+                totalChance += model.getChance();
 
-                    result = distributionUtils.addResults(result, modelResult, model.getChance()/totalChance);
-                }
+                final ResultData modelResult = this.getCachedResult(model, event, maxAttempts, cachedResults);
 
-                return distributionUtils.geometricExpansion(result, totalChance);
-            } else {
-                return new ResultStats(new double[maxAttempts], 1, Double.POSITIVE_INFINITY);
+                partialResult = resultUtils.addResultData(partialResult, modelResult, model.getChance()/totalChance);
             }
+
+            return resultUtils.convoluteData(partialResult, totalChance);
         }
+    }
+
+    private ResultData getCachedResult(ItemModel itemModel, Event event, int maxAttempts, Map<String, ResultData> cachedResults) {
+        final ResultData result;
+        final String signature = itemModel.getSignature();
+
+        if(cachedResults.containsKey(signature)) {
+            result = cachedResults.get(signature);
+        } else {
+            result = this.getResultStats(itemModel.getChild(), event, maxAttempts, cachedResults);
+            cachedResults.put(signature, result);
+        }
+
+        return result;
     }
 }

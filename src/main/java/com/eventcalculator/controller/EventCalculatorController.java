@@ -2,7 +2,7 @@ package com.eventcalculator.controller;
 
 import com.eventcalculator.dto.EventCalculatorRequest;
 import com.eventcalculator.model.ItemModel;
-import com.eventcalculator.model.ResultStats;
+import com.eventcalculator.model.ResultData;
 import com.eventcalculator.service.EventCalculatorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,7 +15,7 @@ public class EventCalculatorController {
     EventCalculatorService eventCalculatorService;
 
     @PostMapping("/processModel")
-    public ResultStats processModel(@RequestBody EventCalculatorRequest request) {
+    public ResultData processModel(@RequestBody EventCalculatorRequest request) {
         return eventCalculatorService.getResultStats(ItemModel.fromItems(request.getItems()), request.getEvent(), request.getMaxAttempts());
     }
 }
