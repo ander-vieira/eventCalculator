@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c557f5ab-156c-4538-adfd-a0ac6d057bb0" name="Changes" comment="Simplify GroupEvent, refactor event package and add unit tests">
+    <list default="true" id="c557f5ab-156c-4538-adfd-a0ac6d057bb0" name="Changes" comment="Add comments">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/eventcalculator/controller/DistributionControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/eventcalculator/controller/EventCalculatorControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventcalculator/controller/EventCalculatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/controller/EventCalculatorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventcalculator/service/DistributionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/service/DistributionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventcalculator/service/EventCalculatorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/service/EventCalculatorService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +52,7 @@
       <recent name="com.eventcalculator.model" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.EventCalculatorApplication">
+  <component name="RunManager" selected="JUnit.All in eventCalculator">
     <configuration name="EventCalculatorApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.eventcalculator.EventCalculatorApplication" />
       <module name="eventCalculator" />
@@ -182,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670785306718</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Add comments">
+      <created>1670787223235</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1670787223235</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -210,7 +216,8 @@
     <MESSAGE value="Add unit tests for events" />
     <MESSAGE value="Add controller and endpoints for distribution parameters" />
     <MESSAGE value="Simplify GroupEvent, refactor event package and add unit tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Simplify GroupEvent, refactor event package and add unit tests" />
+    <MESSAGE value="Add comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add comments" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
@@ -231,6 +238,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/eventCalculator$All_in_eventCalculator__1_.ic" NAME="All in eventCalculator (1) Coverage Results" MODIFIED="1670772983418" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/eventCalculator$All_in_eventCalculator.ic" NAME="All in eventCalculator Coverage Results" MODIFIED="1670785157167" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/eventCalculator$All_in_eventCalculator.ic" NAME="All in eventCalculator Coverage Results" MODIFIED="1670790079840" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
