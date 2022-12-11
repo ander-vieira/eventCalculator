@@ -9,7 +9,7 @@ import java.util.List;
 
 @Getter
 @AllArgsConstructor
-public class EventCalculatorRequest {
+public class ProcessModelRequest {
     private final List<Item> items;
     private final Event event;
     private final int maxAttempts;

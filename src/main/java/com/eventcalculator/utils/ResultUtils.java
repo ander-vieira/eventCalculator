@@ -2,13 +2,14 @@ package com.eventcalculator.utils;
 
 import com.eventcalculator.model.DistributionData;
 import com.eventcalculator.model.ResultData;
+import com.eventcalculator.service.DistributionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class ResultUtils {
     @Autowired
-    private DistributionUtils distributionUtils;
+    private DistributionService distributionUtils;
 
     public ResultData addResultData(ResultData oldData, ResultData newData, double ratio) {
         final double expectedValue;

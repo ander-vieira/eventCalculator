@@ -24,7 +24,7 @@ public class Item {
         return this.id == itemId;
     }
 
-    public boolean isComplete() {
-        return this.amount >= this.neededAmount;
+    public boolean isIncomplete() {
+        return this.amount < this.neededAmount;
     }
 }

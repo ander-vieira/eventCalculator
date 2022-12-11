@@ -25,7 +25,7 @@ public class ItemModel {
     public ItemModel addToItem(int itemId, int amount) {
         Item item = this.items.stream().filter(it -> it.hasId(itemId)).findFirst().orElse(null);
 
-        boolean modified = item != null && !item.isComplete() && amount != 0;
+        boolean modified = item != null && item.isIncomplete() && amount != 0;
 
         if(modified) {
             item.add(amount);
@@ -43,7 +43,7 @@ public class ItemModel {
     }
 
     public boolean isComplete() {
-        return items.stream().filter(item -> !item.isComplete()).findAny().isEmpty();
+        return items.stream().filter(Item::isIncomplete).findAny().isEmpty();
     }
 
     public String getSignature() {

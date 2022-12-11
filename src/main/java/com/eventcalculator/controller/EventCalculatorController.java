@@ -1,6 +1,6 @@
 package com.eventcalculator.controller;
 
-import com.eventcalculator.dto.EventCalculatorRequest;
+import com.eventcalculator.dto.ProcessModelRequest;
 import com.eventcalculator.model.ItemModel;
 import com.eventcalculator.model.ResultData;
 import com.eventcalculator.service.EventCalculatorService;
@@ -15,7 +15,7 @@ public class EventCalculatorController {
     EventCalculatorService eventCalculatorService;
 
     @PostMapping("/processModel")
-    public ResultData processModel(@RequestBody EventCalculatorRequest request) {
+    public ResultData processModel(@RequestBody ProcessModelRequest request) {
         return eventCalculatorService.getResultStats(ItemModel.fromItems(request.getItems()), request.getEvent(), request.getMaxAttempts());
     }
 }

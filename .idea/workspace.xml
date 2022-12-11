@@ -4,11 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c557f5ab-156c-4538-adfd-a0ac6d057bb0" name="Changes" comment="Remove unused item names">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/eventcalculator/model/EventTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/application.properties" afterDir="false" />
+    <list default="true" id="c557f5ab-156c-4538-adfd-a0ac6d057bb0" name="Changes" comment="Add unit tests for events">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/controller/DistributionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/dto/GetPercentileRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventcalculator/controller/EventCalculatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/controller/EventCalculatorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventcalculator/dto/EventCalculatorRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/dto/ProcessModelRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventcalculator/dto/EventCalculatorResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/ItemModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/ItemModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventcalculator/utils/DistributionUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/service/DistributionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventcalculator/utils/ResultUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/utils/ResultUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +36,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectId" id="2IGK9qkAnvuF7nKLFFPzJKvVoo9" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -48,7 +58,7 @@
       <recent name="com.eventcalculator.model" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in eventCalculator">
+  <component name="RunManager" selected="Application.EventCalculatorApplication">
     <configuration name="EventCalculatorApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.eventcalculator.EventCalculatorApplication" />
       <module name="eventCalculator" />
@@ -156,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670775132744</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Add unit tests for events">
+      <created>1670775165976</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1670775165976</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -181,7 +198,8 @@
     <MESSAGE value="Refactor deserializer to use constants" />
     <MESSAGE value="Rename DependentGroupEvent to OptionEvent" />
     <MESSAGE value="Remove unused item names" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove unused item names" />
+    <MESSAGE value="Add unit tests for events" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add unit tests for events" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
