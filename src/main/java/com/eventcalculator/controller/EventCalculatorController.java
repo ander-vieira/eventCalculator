@@ -16,6 +16,6 @@ public class EventCalculatorController {
 
     @PostMapping("/processModel")
     public ResultData processModel(@RequestBody ProcessModelRequest request) {
-        return eventCalculatorService.getResultStats(ItemModel.fromItems(request.getItems()), request.getEvent(), request.getMaxAttempts());
+        return eventCalculatorService.getResultData(ItemModel.fromItems(request.getItems()), request.getEvent(), request.getMaxAttempts());
     }
 }

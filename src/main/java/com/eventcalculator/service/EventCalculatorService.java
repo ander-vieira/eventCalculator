@@ -16,13 +16,36 @@ public class EventCalculatorService {
     @Autowired
     private ResultUtils resultUtils;
 
-    public ResultData getResultStats(ItemModel itemModel, Event event, int maxAttempts) {
+    /**
+     * Get the expected value and distribution of the number of attempts needed to
+     * reach the specified required number of items.
+     * This method runs the item model through the event repeatedly until the model satisfies the requirements,
+     * then uses the resulting map of possible states to calculate the statistical parameters.
+     *
+     * @param itemModel The item model to be modified by the event
+     * @param event The event to run the model through
+     * @param maxAttempts The maximum number of attempts to generate the distribution for
+     * @return The statistical parameters for the number of attempts needed
+     */
+    public ResultData getResultData(ItemModel itemModel, Event event, int maxAttempts) {
         final Map<String, ResultData> cachedResults = new HashMap<>();
 
-        return this.getResultStats(itemModel, event, maxAttempts, cachedResults);
+        return this.getResultData(itemModel, event, maxAttempts, cachedResults);
     }
 
-    private ResultData getResultStats(ItemModel itemModel, Event event, int maxAttempts, Map<String, ResultData> cachedResults) {
+    /**
+     * Get the expected value and distribution of the number of attempts needed to
+     * reach the specified required number of items.
+     * This method runs the item model through the event repeatedly until the model satisfies the requirements,
+     * then uses the resulting map of possible states to calculate the statistical parameters.
+     *
+     * @param itemModel The item model to be modified by the event
+     * @param event The event to run the model through
+     * @param maxAttempts The maximum number of attempts to generate the distribution for
+     * @param cachedResults A map of results for already calculated states of the model
+     * @return The statistical parameters for the number of attempts needed
+     */
+    private ResultData getResultData(ItemModel itemModel, Event event, int maxAttempts, Map<String, ResultData> cachedResults) {
         if(itemModel.isComplete()) {
             return ResultData.finished(maxAttempts);
         } else {
@@ -43,6 +66,17 @@ public class EventCalculatorService {
         }
     }
 
+    /**
+     * Check if the specified model state has already been processed.
+     * If so, get the cached results to improve performance.
+     * Otherwise, process the state by recursively calling getResultData.
+     *
+     * @param itemModel The item model to be modified by the event
+     * @param event The event to run the model through
+     * @param maxAttempts The maximum number of attempts to generate the distribution for
+     * @param cachedResults A map of results for already calculated states of the model
+     * @return The statistical parameters for the number of attempts needed
+     */
     private ResultData getCachedResult(ItemModel itemModel, Event event, int maxAttempts, Map<String, ResultData> cachedResults) {
         final ResultData result;
         final String signature = itemModel.getSignature();
@@ -50,7 +84,7 @@ public class EventCalculatorService {
         if(cachedResults.containsKey(signature)) {
             result = cachedResults.get(signature);
         } else {
-            result = this.getResultStats(itemModel.getChild(), event, maxAttempts, cachedResults);
+            result = this.getResultData(itemModel.getChild(), event, maxAttempts, cachedResults);
             cachedResults.put(signature, result);
         }
 

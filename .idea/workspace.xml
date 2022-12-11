@@ -4,21 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c557f5ab-156c-4538-adfd-a0ac6d057bb0" name="Changes" comment="Add controller and endpoints for distribution parameters">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/event/GroupEvent.java" afterDir="false" />
+    <list default="true" id="c557f5ab-156c-4538-adfd-a0ac6d057bb0" name="Changes" comment="Simplify GroupEvent, refactor event package and add unit tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventcalculator/dto/ProcessModelRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/dto/ProcessModelRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventcalculator/json/EventDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/json/EventDeserializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/AddRangeEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/event/AddRangeEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/ConditionEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/event/ConditionEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/EmptyEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/event/EmptyEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/event/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/EventEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/EventEntry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/GroupEvent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/IncrementEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/event/IncrementEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/OptionEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/model/event/OptionEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventcalculator/controller/EventCalculatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/controller/EventCalculatorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventcalculator/service/DistributionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/service/DistributionService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/eventcalculator/service/EventCalculatorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventcalculator/service/EventCalculatorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/eventcalculator/model/EventTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/eventcalculator/model/event/EventTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670781588746</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Simplify GroupEvent, refactor event package and add unit tests">
+      <created>1670785306718</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1670785306718</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -212,7 +209,8 @@
     <MESSAGE value="Remove unused item names" />
     <MESSAGE value="Add unit tests for events" />
     <MESSAGE value="Add controller and endpoints for distribution parameters" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add controller and endpoints for distribution parameters" />
+    <MESSAGE value="Simplify GroupEvent, refactor event package and add unit tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Simplify GroupEvent, refactor event package and add unit tests" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
