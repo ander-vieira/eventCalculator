@@ -13,6 +13,8 @@ public class ItemModel {
     private final boolean modified;
     private final int attempt;
 
+    private static final String SIGNATURE_DELIM = ",";
+
     public static ItemModel fromItems(List<Item> items) {
         return new ItemModel(items.stream().map(Item::new).toList(), 1, false, 0);
     }
@@ -43,5 +45,9 @@ public class ItemModel {
 
     public boolean isComplete() {
         return items.stream().filter(item -> !item.isComplete()).findAny().isEmpty();
+    }
+
+    public String getSignature() {
+        return String.join(SIGNATURE_DELIM, items.stream().map(item -> Integer.toString(item.getAmount())).toList());
     }
 }

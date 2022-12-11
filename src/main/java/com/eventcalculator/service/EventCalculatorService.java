@@ -7,7 +7,9 @@ import com.eventcalculator.utils.StatsUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class EventCalculatorService {
@@ -15,6 +17,12 @@ public class EventCalculatorService {
     private StatsUtils distributionUtils;
 
     public ResultStats getResultStats(ItemModel itemModel, Event event, int maxAttempts) {
+        Map<String, ResultStats> cachedResults = new HashMap<>();
+
+        return this.getResultStats(itemModel, event, maxAttempts, cachedResults);
+    }
+
+    public ResultStats getResultStats(ItemModel itemModel, Event event, int maxAttempts, Map<String, ResultStats> cachedResults) {
         if(itemModel.isComplete()) {
             double[] distribution = new double[maxAttempts];
             double remainder = 0;
@@ -35,7 +43,15 @@ public class EventCalculatorService {
                 ResultStats result = new ResultStats(new double[maxAttempts], 0, 1/totalChance);
 
                 for(ItemModel model : modifiedModels) {
-                    ResultStats modelResult = this.getResultStats(model.getChild(), event, maxAttempts);
+                    String signature = model.getSignature();
+                    ResultStats modelResult;
+                    if(cachedResults.containsKey(signature)) {
+                        modelResult = cachedResults.get(signature);
+                    } else {
+                        modelResult = this.getResultStats(model.getChild(), event, maxAttempts, cachedResults);
+                        cachedResults.put(signature, modelResult);
+                    }
+
                     result = distributionUtils.addResults(result, modelResult, model.getChance()/totalChance);
                 }
 
