@@ -31,8 +31,8 @@ public class EventDeserializer extends JsonDeserializer<Event> {
             case ConditionEvent.JSON_TYPE -> new ConditionEvent(objectMapper.treeToValue(node.get("event"), Event.class),
                     node.get("chance").asDouble());
             case GroupEvent.JSON_TYPE -> new GroupEvent(objectMapper.treeToValue(node.get("entries"), EventEntry[].class));
-            case DependentGroupEvent.JSON_TYPE ->
-                    new DependentGroupEvent(objectMapper.treeToValue(node.get("entries"), EventEntry[].class));
+            case OptionEvent.JSON_TYPE ->
+                    new OptionEvent(objectMapper.treeToValue(node.get("entries"), EventEntry[].class));
             default -> null;
         };
     }

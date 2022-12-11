@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class DependentGroupEvent implements Event {
+public class OptionEvent implements Event {
     private final EventEntry[] entries;
 
-    public static final String JSON_TYPE = "dependentGroup";
+    public static final String JSON_TYPE = "option";
 
-    public DependentGroupEvent(EventEntry[] entries) {
+    public OptionEvent(EventEntry[] entries) {
         double totalChance = Arrays.stream(entries).map(EventEntry::getChance).reduce(0.0, Double::sum);
 
         if(totalChance != 1) {
