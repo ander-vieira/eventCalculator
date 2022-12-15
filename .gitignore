@@ -36,3 +36,7 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+### Generated frontend files ###
+src/main/resources/public/css
+src/main/resources/public/js
